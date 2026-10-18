@@ -12,6 +12,32 @@ alias fd='fdfind'
 
 alias az='sudo apt update && sudo apt install -y'
 
-alias gx='sudo apt update && sudo apt upgrade -y && opencode upgrade && echo "更新已完成！重启后加载最新配置，不着急也可以过会儿再重启"'
+gx() {
+    sudo apt update &&
+    sudo apt upgrade -y &&
+    echo ; echo '========== apt 更新完成 ==========' ; echo
+
+    sudo snap refresh &&
+    echo ; echo '========== snap 更新完成 ==========' ; echo
+
+    opencode upgrade &&
+    echo ; echo '========== opencode 更新完成 ==========' ; echo
+
+    if command -v codex >/dev/null 2>&1; then
+        codex update &&
+        echo ; echo '========== codex 更新完成 ==========' ; echo
+    else
+        echo ; echo '========== 未安装 codex，跳过更新 ==========' ; echo
+    fi
+
+    if command -v claude >/dev/null 2>&1; then
+        claude update &&
+        echo ; echo '========== claude 更新完成 ==========' ; echo
+    else
+        echo ; echo '========== 未安装 claude，跳过更新 ==========' ; echo
+    fi
+
+    echo "========== 全部更新命令已执行，重启以加载最新配置 ==========" ; echo
+}
 
 alias xz='sudo apt remove --purge'
