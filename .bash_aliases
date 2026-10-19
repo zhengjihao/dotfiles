@@ -27,14 +27,21 @@ gx() {
         codex update &&
         echo ; echo '========== codex 更新完成 ==========' ; echo
     else
-        echo ; echo '========== 未安装 codex，跳过更新 ==========' ; echo
+        echo ; echo '========== 未安装 codex 跳过更新 ==========' ; echo
     fi
 
     if command -v claude >/dev/null 2>&1; then
         claude update &&
         echo ; echo '========== claude 更新完成 ==========' ; echo
     else
-        echo ; echo '========== 未安装 claude，跳过更新 ==========' ; echo
+        echo ; echo '========== 未安装 claude 跳过更新 ==========' ; echo
+    fi
+
+    if command -v gext >/dev/null 2>&1; then
+	gext update &&
+	echo ; echo '========== extensions 更新完成 ==========' ; echo
+    else
+	echo ; echo '========== 未安装 extensions 跳过更新 ==========' ; echo
     fi
 
     echo "========== 全部更新命令已执行，重启以加载最新配置 ==========" ; echo
