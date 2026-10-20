@@ -39,12 +39,12 @@ gx() {
 
     if command -v gext >/dev/null 2>&1; then
 	gext update &&
-	echo '========== extensions 更新完成 ==========' ; echo
+	echo ; echo '========== extensions 更新完成 ==========' ; echo
     else
-	echo '========== 未安装 extensions 跳过更新 ==========' ; echo
+	echo ; echo '========== 未安装 extensions 跳过更新 ==========' ; echo
     fi
 
-    echo "========== 全部更新命令已执行，重启以加载最新配置 ==========" ; echo
+    echo ; echo "========== 全部更新命令已执行，重启以加载最新配置 ==========" ; echo
 }
 
 alias xz='sudo apt remove --purge'
