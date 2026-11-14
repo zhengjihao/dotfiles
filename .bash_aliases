@@ -41,3 +41,7 @@ gx() {
     brew cleanup &&
     echo '更新已完成，记得手动重启'
 }
+
+# 安装并且删除
+
+alias az='sudo apt install -y ~/下载/*.deb && rm -f ~/下载/*.deb'
