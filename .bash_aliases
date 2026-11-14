@@ -1,3 +1,7 @@
+# Clash Verge
+
+alias clashverge='export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897'
+
 # Claude Code
 
 alias cdsp='claude --dangerously-skip-permissions'
@@ -8,9 +12,7 @@ alias bat='batcat'
 
 alias fd='fdfind'
 
-# apt, snap, gext, claude, codex, opencode, clean
-
-alias az='sudo apt update && sudo apt install -y'
+# apt, snap, brew
 
 gx() {
     local mode="${1:-desktop}" # 不传参数就是 desktop
@@ -26,17 +28,16 @@ gx() {
         return 1
     fi
 
+    clashverge &&
     sudo apt update &&
     sudo apt upgrade -y &&
+    brew update &&
+    brew upgrade &&
     sudo snap refresh &&
     if [[ "$mode" == "desktop" ]]; then
         gext update
     fi &&
-    claude update &&
-    codex update &&
-    opencode update &&
     sudo apt clean &&
+    brew cleanup &&
     echo '更新已完成，记得手动重启'
 }
-
-alias xz='sudo apt remove --purge'
