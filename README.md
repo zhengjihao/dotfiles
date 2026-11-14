@@ -10,6 +10,7 @@ git clone https://github.com/zhengjihao/dotfiles.git
 cd ~/dotfiles
 ./install.sh
 source ~/.bashrc
+cd ~
 ```
 
 # 3. How to Use
