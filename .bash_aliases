@@ -14,31 +14,7 @@ alias fd='fdfind'
 
 # apt, snap, brew
 
-gx() {
-    local mode="${1:-desktop}" # 不传参数就是 desktop
-
-    if [[ "$mode" != "server" && "$mode" != "desktop" ]]; then
-        echo "用法: gx [desktop|server] # 不传参数就是 desktop"
-        return 1
-    fi
-
-    read -p "模式：$mode, 确认更新?(yes/no) " confirm
-    if [[ "$confirm" != "yes" ]]; then
-        echo "已取消"
-        return 1
-    fi
-
-    clashverge &&
-    sudo apt update &&
-    sudo apt upgrade -y &&
-    brew update &&
-    brew upgrade &&
-    sudo snap refresh &&
-    if [[ "$mode" == "desktop" ]]; then
-        gext update
-    fi
-    echo '更新已完成，记得手动重启'
-}
+alias gx='sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew update && brew upgrade && echo 🎆 apt, snap, homebrew 更新成功！ 🎆 '
 
 # 安装并且删除
 
