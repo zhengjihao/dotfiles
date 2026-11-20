@@ -36,9 +36,7 @@ gx() {
     sudo snap refresh &&
     if [[ "$mode" == "desktop" ]]; then
         gext update
-    fi &&
-    sudo apt clean &&
-    brew cleanup &&
+    fi
     echo '更新已完成，记得手动重启'
 }
 
