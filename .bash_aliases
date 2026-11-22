@@ -8,9 +8,9 @@ alias bat='batcat'
 
 alias fd='fdfind'
 
-# apt, snap, brew
+# apt, snap, brew, pipx
 
-alias gx='sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew update && brew upgrade && echo 🎆 apt, snap, homebrew 更新成功！ 🎆 '
+alias gx='sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew update && brew upgrade && pipx upgrade-all && echo 🎆 apt, snap, homebrew, pipx 更新成功！ 🎆 '
 
 # 安装并且删除
 
