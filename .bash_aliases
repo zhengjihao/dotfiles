@@ -8,7 +8,7 @@ alias bat='batcat'
 
 alias fd='fdfind'
 
-# apt, snap, flatpak, brew, pipx
+# apt, brew, snap, flatpak
 
 alias gx='sudo apt update && \
 	brew update && \
