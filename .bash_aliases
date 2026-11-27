@@ -8,10 +8,20 @@ alias bat='batcat'
 
 alias fd='fdfind'
 
-# apt, snap, brew, pipx
+# apt, snap, flatpak, brew, pipx
 
-alias gx='sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew update && brew upgrade && pipx upgrade-all && echo 🎆 apt, snap, homebrew, pipx 更新成功！ 🎆 '
+alias gx='sudo apt update && \
+	brew update && \
+	brew upgrade && \
+	sudo apt upgrade -y && \
+	sudo snap refresh && \
+	tldr --update && \
+	echo success for server && \
+	flatpak update > /dev/null 2>&1 && \
+	echo success for desktop'
 
-# 安装并且删除
+# install and remove
 
-alias az='sudo apt install -y ~/下载/*.deb && rm -f ~/下载/*.deb'
+alias az='sudo apt install -y ~/下载/*.deb && \
+	rm -f ~/下载/*.deb'
+
